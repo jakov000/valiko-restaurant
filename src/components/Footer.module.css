@@ -1,0 +1,22 @@
+.footer {
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--spacing-lg) var(--spacing-sm);
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #a0aec0;
+}

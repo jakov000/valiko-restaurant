@@ -1,0 +1,90 @@
+.section {
+    padding: var(--spacing-xl) var(--spacing-sm);
+    background-color: var(--color-secondary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary);
+    position: relative;
+    display: inline-block;
+}
+
+.title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background-color: var(--color-accent);
+    margin: 0.5rem auto 0;
+    border-radius: var(--radius-full);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.card {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.imagePlaceholder {
+    height: 200px;
+    background-color: #eee;
+    margin: -2rem -2rem 1rem -2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #ccc;
+    /* If real images exist, use object-fit: cover */
+    background-size: cover;
+    background-position: center;
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+}
+
+.cardText {
+    color: #4a5568;
+    margin-bottom: var(--spacing-sm);
+}
+
+.price {
+    font-weight: 700;
+    color: var(--color-accent);
+    font-size: 1.25rem;
+    margin-top: auto;
+    display: block;
+}
+
+.german {
+    border-bottom: 4px solid var(--color-gold);
+}
+
+.armenian {
+    border-bottom: 4px solid var(--color-accent);
+}

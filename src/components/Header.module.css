@@ -1,0 +1,73 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: white;
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-sm);
+    transition: all 0.3s ease;
+}
+
+.scrolled {
+    box-shadow: var(--shadow-md);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo span {
+    color: var(--color-green);
+}
+
+.nav {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.link {
+    font-weight: 500;
+    color: var(--color-primary);
+    transition: color 0.2s;
+    position: relative;
+}
+
+.link:hover {
+    color: var(--color-accent);
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--color-accent);
+    transition: width 0.3s;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        /* Just simple mobile hidden for MVP */
+    }
+}

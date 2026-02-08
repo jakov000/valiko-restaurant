@@ -1,0 +1,93 @@
+.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1974&auto=format&fit=crop');
+    /* Fallback Image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 0 var(--spacing-sm);
+    text-align: center;
+}
+
+.content {
+    max-width: 800px;
+    animation: fadeIn 1s ease-out;
+}
+
+.title {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+}
+
+.btnPrimary {
+    background-color: var(--color-accent);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.btnPrimary:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+}
+
+.btnSecondary {
+    background-color: transparent;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    border: 2px solid white;
+    transition: all 0.3s;
+}
+
+.btnSecondary:hover {
+    background-color: white;
+    color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

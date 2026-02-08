@@ -1,0 +1,63 @@
+.section {
+    padding: var(--spacing-xl) 0;
+    background-color: #f0f4f8;
+}
+
+.title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+}
+
+.container {
+    max-width: 1200px;
+    background: white;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info {
+    flex: 1;
+    min-width: 300px;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mapContainer {
+    flex: 1;
+    min-width: 300px;
+    height: 450px;
+}
+
+.infoTitle {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-green);
+}
+
+.infoText {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.1rem;
+}
+
+.contactBtn {
+    margin-top: var(--spacing-md);
+    background-color: var(--color-primary);
+    color: white;
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-align: center;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+}
+
+.contactBtn:hover {
+    background-color: black;
+}
