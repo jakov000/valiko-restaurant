@@ -1,6 +1,6 @@
-# Sportgaststätte ASV Fürth - Website
+# Restaurant Lori Website
 
-Dies ist die offizielle Website für die Sportgaststätte ASV Fürth, entwickelt mit Next.js und modernem CSS.
+Dies ist die offizielle Website für das Restaurant Lori, entwickelt mit Next.js und modernem CSS.
 
 ## Features
 

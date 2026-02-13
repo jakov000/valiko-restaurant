@@ -1,22 +1,62 @@
 .footer {
-    background-color: var(--color-primary);
-    color: white;
-    padding: var(--spacing-lg) var(--spacing-sm);
+    background: rgba(15, 17, 21, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    padding: var(--spacing-lg) 0;
     text-align: center;
+    color: var(--color-primary);
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.2);
+    margin-top: auto;
+    /* Ensure it stays at bottom if content is short */
 }
 
 .links {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-sm);
+    gap: 3rem;
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.links a {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+    text-decoration: none;
 }
 
 .links a:hover {
-    text-decoration: underline;
+    color: var(--color-accent);
+}
+
+/* Elegant Underline Animation for Footer Links */
+.links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--color-accent);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateX(-50%);
+}
+
+.links a:hover::after {
+    width: 100%;
 }
 
 .copyright {
-    font-size: 0.8rem;
-    color: #a0aec0;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    font-family: var(--font-body);
+    margin-top: var(--spacing-md);
+    letter-spacing: 0.05em;
 }

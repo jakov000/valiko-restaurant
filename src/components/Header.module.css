@@ -1,64 +1,94 @@
 .header {
     position: sticky;
     top: 0;
-    z-index: 50;
-    background: white;
-    box-shadow: var(--shadow-sm);
-    padding: var(--spacing-sm);
-    transition: all 0.3s ease;
-}
-
-.scrolled {
-    box-shadow: var(--shadow-md);
+    z-index: 100;
+    background: rgba(15, 17, 21, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    /* Subtle Gold Border */
+    padding: 1rem 0;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1400px;
+    /* Wider for luxury feel */
     margin: 0 auto;
+    padding: 0 var(--spacing-md);
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--color-primary);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
 }
 
-.logo span {
-    color: var(--color-green);
+.logoLink {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.logoLink:hover {
+    transform: scale(1.02);
+}
+
+.logoImage {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.logoText {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-left: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
 }
 
 .nav {
     display: flex;
-    gap: var(--spacing-md);
+    gap: 3rem;
+    /* More breathing room */
+    align-items: center;
 }
 
 .link {
+    font-family: var(--font-heading);
+    /* Playfair Display */
     font-weight: 500;
+    font-size: 1rem;
     color: var(--color-primary);
-    transition: color 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
 }
 
 .link:hover {
     color: var(--color-accent);
 }
 
+/* Elegant Underline Animation */
 .link::after {
     content: '';
     position: absolute;
     width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
     background-color: var(--color-accent);
-    transition: width 0.3s;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateX(-50%);
 }
 
 .link:hover::after {
@@ -68,6 +98,13 @@
 @media (max-width: 768px) {
     .nav {
         display: none;
-        /* Just simple mobile hidden for MVP */
+    }
+
+    .header {
+        padding: 0.5rem 0;
+    }
+
+    .logoImage {
+        height: 70px;
     }
 }

@@ -1,52 +1,56 @@
+'use client';
+
+import { useState } from 'react';
 import styles from './MenuHighlight.module.css';
 
 export default function MenuHighlight() {
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    const handleMenuClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+        if (isAnimating) return;
+
+        setIsAnimating(true);
+
+        // Wait for animation to play before opening link
+        setTimeout(() => {
+            window.open('/Menu.pdf', '_blank');
+            setIsAnimating(false);
+        }, 600);
+    };
+
     return (
         <section id="menu" className={styles.section}>
             <div className={styles.container}>
-                <h2 className={styles.title}>Unsere Küche</h2>
-                <div className={styles.grid}>
-                    {/* German Highlight */}
-                    <div className={`${styles.card} ${styles.german}`}>
-                        <div
-                            className={styles.imagePlaceholder}
-                            style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1599921841143-819065a55cc6?q=80&w=1931&auto=format&fit=crop")' }}
-                        >
-                        </div>
-                        <h3 className={styles.cardTitle}>Fränkische Klassiker</h3>
-                        <p className={styles.cardText}>
-                            Vom knusprigen Schnitzel bis zum deftigen Schäufele – genießen Sie ehrliche, hausgemachte deutsche Küche.
-                        </p>
-                        <span className={styles.price}>Ab 12,90€</span>
-                    </div>
+                <h2 className={styles.title}>Unsere Speisekarte</h2>
 
-                    {/* Armenian Highlight */}
-                    <div className={`${styles.card} ${styles.armenian}`}>
-                        <div
-                            className={styles.imagePlaceholder}
-                            style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1974&auto=format&fit=crop")' }}
-                        >
+                <div className={`${styles.menuPreview} ${isAnimating ? styles.animating : ''}`}>
+                    <a
+                        href="/Menu.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.menuLink}
+                        onClick={handleMenuClick}
+                    >
+                        <div className={styles.imageWrapper}>
+                            <img
+                                src="/speise.jpeg"
+                                alt="Speisekarte Vorschau"
+                                className={styles.menuImage}
+                            />
+                            {/* Ripple effect container */}
+                            {isAnimating && <div className={styles.ripple}></div>}
                         </div>
-                        <h3 className={styles.cardTitle}>Armenische Spezialitäten</h3>
-                        <p className={styles.cardText}>
-                            Entdecken Sie den Geschmack des Kaukasus mit traditionellem Schaschlik, Lawasch und frischen Kräutern.
-                        </p>
-                        <span className={styles.price}>Ab 14,50€</span>
-                    </div>
+                        <div className={styles.overlay}>
+                            <span>Als PDF öffnen</span>
+                        </div>
+                    </a>
+                </div>
 
-                    {/* Drinks Highlight */}
-                    <div className={styles.card}>
-                        <div
-                            className={styles.imagePlaceholder}
-                            style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=2070&auto=format&fit=crop")' }}
-                        >
-                        </div>
-                        <h3 className={styles.cardTitle}>Frisch Gezapftes</h3>
-                        <p className={styles.cardText}>
-                            Ein kühles Helles oder ein Weizen nach dem Spiel. Wir bieten eine große Auswahl an Getränken.
-                        </p>
-                        <span className={styles.price}>Ab 3,80€</span>
-                    </div>
+                <div className={styles.buttonContainer}>
+                    <a href="/Menu.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                        Vollständige Speisekarte ansehen (PDF)
+                    </a>
                 </div>
             </div>
         </section>

@@ -1,14 +1,22 @@
 :root {
-  /* Dynamic Palette */
-  --color-primary: #1a202c; /* Dark Slate/Black */
-  --color-secondary: #f7fafc; /* Light Gray/White */
-  --color-accent: #ed8936; /* Warm Orange (Food/Heat) */
-  --color-accent-hover: #dd6b20;
-  --color-gold: #ecc94b; /* Beer/Gold */
-  --color-green: #38a169; /* Sports Green */
+  /* Dynamic Palette - Refined for "Restaurant Lori" Dark Mode */
+  --color-primary: #f7fafc;
+  /* Light Gray for Text */
+  --color-secondary: #0f1115;
+  /* Deep Dark Background */
+  --color-accent: #c5a059;
+  /* Classic Gold */
+  --color-accent-hover: #b08d4b;
+  --color-gold: #ecc94b;
+  /* Beer/Gold */
+  --color-green: #2F5233;
+  /* Deep Forest Green (Herbs/Nature) */
+  --color-muted: #a0aec0;
+  /* Lighter Muted for Dark Mode */
 
-  --font-heading: 'Outfit', sans-serif;
+  --font-heading: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
+  --font-sans: 'Outfit', sans-serif;
 
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -42,7 +50,12 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   line-height: 1.2;
 }
@@ -89,14 +102,29 @@ button {
   padding: var(--spacing-lg) 0;
 }
 
-.text-center { text-align: center; }
-.text-gold { color: var(--color-gold); }
-.text-green { color: var(--color-green); }
+.text-center {
+  text-align: center;
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-green {
+  color: var(--color-green);
+}
 
 /* Animation Utils */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {

@@ -1,0 +1,249 @@
+.galleryPage {
+    background-color: var(--color-secondary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.heroSection {
+    padding: var(--spacing-xl) var(--spacing-sm);
+    text-align: center;
+    background-color: var(--color-secondary);
+    color: white;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle pattern overlay */
+.heroSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(197, 160, 89, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(197, 160, 89, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-sm);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.galleryContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md) var(--spacing-xl);
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+/* Luxury Card Effect */
+.imageCard {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.imageCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.imageCard:hover .image {
+    transform: scale(1.1);
+}
+
+/* Overlay with Icon */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 32, 44, 0.4);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+}
+
+.imageCard:hover .overlay {
+    opacity: 1;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    transform: scale(0.8);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.imageCard:hover .icon {
+    transform: scale(1);
+}
+
+/* Lightbox Styles (Reused/Adapted) */
+.lightboxOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(26, 32, 44, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: zoom-out;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.lightboxContent {
+    position: relative;
+    max-width: 95vw;
+    max-height: 95vh;
+}
+
+.lightboxImage {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.closeButton {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.closeButton:hover {
+    opacity: 1;
+    color: var(--color-accent);
+}
+
+.navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+
+.navButton:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--color-accent);
+}
+
+.prevButton {
+    left: -80px;
+}
+
+.nextButton {
+    right: -80px;
+}
+
+@media (max-width: 1024px) {
+    .prevButton {
+        left: 10px;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .nextButton {
+        right: 10px;
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+}

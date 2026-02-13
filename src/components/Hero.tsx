@@ -6,8 +6,8 @@ export default function Hero() {
         <section className={styles.hero}>
             <div className={styles.content}>
                 <h1 className={styles.title}>
-                    Willkommen beim <br />
-                    <span style={{ color: 'var(--color-green)' }}>ASV Fürth</span>
+                    Willkommen im <br />
+                    <span style={{ color: 'var(--color-accent)' }}>Restaurant Lori</span>
                 </h1>
                 <p className={styles.subtitle}>
                     Wo deutsche Klassiker auf armenische Gastfreundschaft treffen.
@@ -17,8 +17,10 @@ export default function Hero() {
                     <Link href="#menu" className={styles.btnPrimary}>
                         Unsere Speisekarte
                     </Link>
-                    <Link href="#location" className={styles.btnSecondary}>
-                        Tisch reservieren
+                    <Link href="/kontakt" className={styles.btnSecondary} style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '0.2rem' }}>
+                        <span>Tisch reservieren</span>
+                        <span style={{ fontSize: '0.85em', fontWeight: 'normal' }}>Festnetz: 0911 96589761</span>
+                        <span style={{ fontSize: '0.85em', fontWeight: 'normal' }}>Mobil: 0176 30191234</span>
                     </Link>
                 </div>
             </div>
