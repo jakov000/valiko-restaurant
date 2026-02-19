@@ -31,8 +31,10 @@ export default function Datenschutz() {
                     <h2 className={styles.heading}>2. Hosting</h2>
                     <p className={styles.text}>
                         Wir hosten die Inhalte unserer Website bei folgendem Anbieter:<br />
-                        [Name des Hosters, z.B. Vercel Inc.]<br />
-                        [Adresse des Hosters]<br />
+                        Vercel Inc.<br />
+                        340 S Lemon Ave #4133<br />
+                        Walnut, CA 91789, USA<br />
+                        Datenschutzerklärung: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">https://vercel.com/legal/privacy-policy</a><br />
                     </p>
                 </div>
 

@@ -39,6 +39,10 @@ export default function Impressum() {
                     <h2 className={styles.heading}>Umsatzsteuer-ID</h2>
                     <p className={styles.text}>
                         Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+                        DE460067205
+                    </p>
+                    <p className={styles.text}>
+                        Steuernummer:<br />
                         218 / 167 / 50099
                     </p>
                 </div>
