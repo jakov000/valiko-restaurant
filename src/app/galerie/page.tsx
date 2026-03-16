@@ -8,10 +8,12 @@ import styles from './page.module.css';
 export default function Galerie() {
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-    // Generate array of image paths from 10.jpeg to 24.jpeg, excluding 12.jpeg
-    const images = Array.from({ length: 15 }, (_, i) => i + 10)
-        .map(num => `/${num}.jpeg`)
-        .filter(path => !['/12.jpeg', '/14.jpeg', '/15.jpeg', '/17.jpeg', '/19.jpeg', '/20.jpeg', '/22.jpeg', '/23.jpeg'].includes(path));
+    // Define exactly which images to show in the gallery
+    const images = [
+        '/1.jpeg', '/2.jpeg', '/3.jpeg', '/4.jpeg',
+        '/10.jpeg', '/11.jpeg', '/13.jpeg', '/16.jpeg', 
+        '/18.jpeg', '/21.jpeg', '/24.jpeg'
+    ];
 
     return (
         <main className={styles.galleryPage}>

@@ -7,11 +7,10 @@ export default function Hero() {
             <div className={styles.content}>
                 <h1 className={styles.title}>
                     Willkommen im <br />
-                    <span style={{ color: 'var(--color-accent)' }}>Restaurant Lori</span>
+                    <span style={{ color: 'var(--color-accent)' }}>Lori Restaurant</span>
                 </h1>
                 <p className={styles.subtitle}>
-                    Wo deutsche Klassiker auf armenische Gastfreundschaft treffen.
-                    <br />Genießen Sie das Beste aus beiden Welten.
+                    Armenische und georgische Spezialitäten, frische Pizza und eine Bar für entspannte Stunden im Herzen von Fürth.
                 </p>
                 <div className={styles.buttons}>
                     <Link href="#menu" className={styles.btnPrimary}>

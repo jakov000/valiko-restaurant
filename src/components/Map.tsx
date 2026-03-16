@@ -21,9 +21,10 @@ export default function Map() {
 
                     <h3 className={styles.infoTitle} style={{ marginTop: '2rem' }}>Öffnungszeiten</h3>
                     <p className={styles.infoText}>
-                        Mo - Fr: 15:30 - 00:00 Uhr<br />
-                        Samstag: 11:00 - 00:00 Uhr<br />
-                        Sonntag: 11:00 - 22:00 Uhr<br />
+                        Montag: Ruhetag<br />
+                        Dienstag bis Freitag: 15:30 - 23:00 Uhr<br />
+                        Samstag: 12:00 - 23:00 Uhr<br />
+                        Sonntag: 12:00 - 22:00 Uhr<br />
                         Warme Küche bis 21:30 Uhr
                     </p>
 

@@ -19,8 +19,7 @@ export default function Header() {
         <header className={styles.header}>
             <div className={styles.container}>
                 <Link href="/" className={styles.logoLink} onClick={closeMenu}>
-                    <img src="/logo/1.jpeg" alt="Restaurant Lori Logo" className={styles.logoImage} />
-                    <span className={styles.logoText}>Restaurant Lori</span>
+                    <img src="/logo/logoneu.png" alt="Restaurant Lori Logo" className={styles.logoImage} />
                 </Link>
 
                 <button
