@@ -4,6 +4,7 @@ import { useState } from 'react';
 import styles from './kontakt.module.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import VacationNotice from '@/components/VacationNotice';
 
 export default function KontaktPage() {
     const [formData, setFormData] = useState({
@@ -65,6 +66,8 @@ export default function KontaktPage() {
                         Familienfeier oder eine große Geburtstagsfeier, bei der Sie das gesamte
                         Restaurant für sich haben möchten – wir machen es möglich.
                     </p>
+
+                    <VacationNotice variant="inline" />
 
                     <form className={styles.form} onSubmit={handleSubmit}>
                         <div className={styles.formGroup}>

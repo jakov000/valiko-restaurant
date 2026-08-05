@@ -1,4 +1,5 @@
 import styles from './Map.module.css';
+import VacationNotice from './VacationNotice';
 
 export default function Map() {
     return (
@@ -27,6 +28,8 @@ export default function Map() {
                         Sonntag: 12:00 - 22:00 Uhr<br />
                         Warme Küche bis 21:30 Uhr
                     </p>
+
+                    <VacationNotice variant="inline" />
 
                     <a href="https://www.google.com/maps/dir/?api=1&destination=Magazinstra%C3%9Fe+45,+90763+F%C3%BCrth" target="_blank" rel="noopener noreferrer" className={styles.contactBtn}>
                         Route planen (Google Maps)

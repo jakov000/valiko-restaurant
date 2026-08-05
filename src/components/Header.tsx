@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
+import VacationNotice from './VacationNotice';
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,30 +17,35 @@ export default function Header() {
     };
 
     return (
-        <header className={styles.header}>
-            <div className={styles.container}>
-                <Link href="/" className={styles.logoLink} onClick={closeMenu}>
-                    <img src="/logo/logoneu.png" alt="Restaurant Lori Logo" className={styles.logoImage} />
-                </Link>
+        <>
+            <header className={styles.header}>
+                <div className={styles.container}>
+                    <Link href="/" className={styles.logoLink} onClick={closeMenu}>
+                        <img src="/logo/logoneu.png" alt="Restaurant Lori Logo" className={styles.logoImage} />
+                    </Link>
 
-                <button
-                    className={`${styles.hamburger} ${isOpen ? styles.active : ''}`}
-                    onClick={toggleMenu}
-                    aria-label="Toggle menu"
-                >
-                    <span className={styles.bar}></span>
-                    <span className={styles.bar}></span>
-                    <span className={styles.bar}></span>
-                </button>
+                    <button
+                        className={`${styles.hamburger} ${isOpen ? styles.active : ''}`}
+                        onClick={toggleMenu}
+                        aria-label="Toggle menu"
+                    >
+                        <span className={styles.bar}></span>
+                        <span className={styles.bar}></span>
+                        <span className={styles.bar}></span>
+                    </button>
 
-                <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>
-                    <Link href="/" className={styles.link} onClick={closeMenu}>Startseite</Link>
-                    <Link href="/galerie" className={styles.link} onClick={closeMenu}>Galerie</Link>
-                    <Link href="/#menu" className={styles.link} onClick={closeMenu}>Speisekarte</Link>
-                    <Link href="/kontakt" className={styles.link} onClick={closeMenu}>Kontakt</Link>
-                    <Link href="/#location" className={styles.link} onClick={closeMenu}>Anfahrt</Link>
-                </nav>
-            </div>
-        </header>
+                    <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>
+                        <Link href="/" className={styles.link} onClick={closeMenu}>Startseite</Link>
+                        <Link href="/galerie" className={styles.link} onClick={closeMenu}>Galerie</Link>
+                        <Link href="/#menu" className={styles.link} onClick={closeMenu}>Speisekarte</Link>
+                        <Link href="/kontakt" className={styles.link} onClick={closeMenu}>Kontakt</Link>
+                        <Link href="/#location" className={styles.link} onClick={closeMenu}>Anfahrt</Link>
+                    </nav>
+                </div>
+            </header>
+
+            {/* Urlaubshinweis – erstes Element im Fluss, erscheint direkt unter dem fixierten Header */}
+            <VacationNotice variant="banner" />
+        </>
     );
 }
